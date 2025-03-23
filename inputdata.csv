@@ -1,0 +1,8 @@
+count,diff_srv_rate,dst_bytes,dst_host_count,dst_host_diff_srv_rate,dst_host_rerror_rate,dst_host_same_src_port_rate,dst_host_same_srv_rate,dst_host_serror_rate,dst_host_srv_count,dst_host_srv_diff_host_rate,dst_host_srv_rerror_rate,dst_host_srv_serror_rate,duration,flag,hot,is_guest_login,is_host_login,num_failed_logins,protocol_type,rerror_rate,same_srv_rate,serror_rate,service,src_bytes,srv_count,srv_diff_host_rate,srv_rerror_rate,srv_serror_rate,urgent,wrong_fragment
+9,0.0,45076,25,0.0,0.0,0.11,1.0,0.0,9,0.0,0.0,0.0,0,SF,0,0,0,0,tcp,0.0,0.11,0.0,http,215,3,0.0,0.0,0.0,0,0
+120,1.0,987654,150,0.5,0.2,0.8,0.9,0.3,200,0.7,0.4,0.35,100,SF,5,1,0,10,tcp,0.4,0.8,0.2,ftp_data,10000,20,0.1,0.1,0.15,1,1
+15,0.2,12345,30,0.0,0.0,0.15,1.0,0.0,10,0.0,0.0,0.0,5,SF,0,0,0,0,tcp,0.0,0.11,0.0,http,300,4,0.0,0.0,0.0,0,0
+200,1.5,543210,180,0.7,0.3,0.9,0.8,0.4,220,0.8,0.5,0.45,120,SF,7,1,0,15,tcp,0.5,0.9,0.3,smurf,15000,25,0.2,0.2,0.25,1,0
+50,0.8,80000,100,0.4,0.1,0.6,0.7,0.2,80,0.5,0.3,0.2,30,SF,2,0,0,0,tcp,0.3,0.5,0.2,ipsweep,5000,15,0.1,0.1,0.05,0,0
+0,0,14,9,1032,0,0,0,0,0,0,0,511,511,0.0,0.0,0.0,0.0,1.0,0.0,0.0,255,255,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
+0,0,14,9,1032,0,0,0,0,0,0,0,511,511,0.0,0.0,0.0,0.0,1.0,0.0,0.0,255,255,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0

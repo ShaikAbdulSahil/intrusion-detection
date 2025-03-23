@@ -1,0 +1,49 @@
+Project Overview:
+-----------------
+This project implements an Intrusion Detection System (IDS) using machine learning. It leverages the KDD Cup 99 dataset – a well-known benchmark dataset for network intrusion detection – to train several classification algorithms and then uses the trained models to predict whether new network traffic records are "Safe" or represent an "Attack".
+
+Dataset:
+--------
+• The dataset (kddcup99_csv.csv) consists of network connection records with 40+ features.
+• Features include numerical measures such as 'src_bytes', 'dst_bytes', and 'count' as well as categorical features like 'protocol_type', 'service', and 'flag'.
+• The 'label' column contains the class information, representing normal traffic or various attack types (e.g., 'smurf', 'neptune').
+• Attack labels are mapped to numerical values (e.g., 0 for 'normal', 1 and 2 for different attack groupings) to simplify prediction.
+
+Data Preprocessing:
+-------------------
+• Data is loaded using pandas with preprocessing steps to ignore comment lines and standardize column names (trimmed and converted to lowercase).
+• Unnecessary columns are dropped (for example, auto-generated 'unnamed: 0' or any columns starting with 'l' that are not 'label').
+• Categorical features (protocol_type, service, flag) are encoded using scikit-learn’s LabelEncoder to convert strings into numerical values.
+• The label column is mapped from string identifiers into numeric classes using a defined mapping dictionary.
+• The cleaned and processed dataset is saved as “New_Data.csv” for reference.
+
+Algorithms and Modeling:
+------------------------
+Four classification algorithms are trained and evaluated:
+1. Random Forest Classifier: A tree-based ensemble method robust to noisy data.
+2. Support Vector Machine (SVM): Uses a linear support vector classifier which is effective in high-dimensional spaces.
+3. Naive Bayes: A probabilistic classifier based on Bayes’ theorem, often used for its simplicity and speed.
+4. Decision Tree: A flowchart-like tree structure where internal nodes represent feature tests.
+Each model is trained on a subset of the data (via train-test splitting), and performance is evaluated using accuracy and confusion matrices.
+
+Evaluation and Visualization:
+-----------------------------
+• Accuracy scores for each algorithm are computed and compared.
+• Confusion matrices are generated for each model and visualized using Seaborn heatmaps. The matrices display normalized values to show class prediction proportions.
+• A bar chart comparing the accuracy of all models is also plotted.
+• All visual output (heatmaps and bar charts) are saved as PNG files in the current directory for review.
+
+Intrusion Detection (Prediction) Phase:
+-----------------------------------------
+• A separate prediction phase is provided where new input data (in inputdata.csv) is loaded and processed using the same preprocessing and encoding steps.
+• The system checks for missing features (adding them with default values) and then applies the best performing (or chosen) model (Random Forest in this case) to predict if new traffic is 'Safe' or 'Attack'.
+• Results from the prediction phase are saved to detection_results.csv.
+
+Purpose and Approach:
+-----------------------
+• The purpose is to automatically and accurately detect potential network intrusions using historical data for training.
+• The approach includes thorough data exploration, feature encoding, supervised machine learning model training, model evaluation, and ultimately using the model for real-time predictions on new data.
+• Utilizing multiple algorithms enables comparative performance analysis, ensuring robustness in detecting various attack types.
+• Visualization of metrics assists in understanding the strengths and weaknesses of each model, guiding future refinements.
+
+Overall, this project provides a full pipeline from data ingestion and preprocessing, to model training & evaluation, followed by a user-friendly prediction interface for continuous monitoring and intrusion detection.
